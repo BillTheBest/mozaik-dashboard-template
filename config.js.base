@@ -1,0 +1,42 @@
+// Load environment variables from .env file if available
+require('dotenv').load();
+
+var config = {
+    env:  'dev',
+
+    host: 'localhost',
+    port: process.env.PORT || 5000,
+
+    // Available themes:
+    // + night-blue
+    // + light-grey
+    // + yellow
+    // + light-yellow
+    // + bordeau
+    theme: 'light-grey',
+
+    // clients configs
+    api: {
+      flowthings: {
+
+      }
+    },
+
+    // define duration beetwen each dashboard rotation (ms)
+    rotationDuration: 8000,
+
+    dashboards: [
+
+        // first dashboard
+        {
+            // 4 x 4 dashboard
+            columns: 4,
+            rows:    4,
+            widgets: [
+
+            ]
+        }
+    ]
+};
+
+module.exports = config;

@@ -1,0 +1,25 @@
+.flowthings__value
+    .widget__body
+        display flex
+        align-items center
+        justify-content center
+
+    .failure
+        .flowthings__value__current
+            color $failure-color
+
+.flowthings__value__current
+    &.number
+        font-size 12vmin
+        line-height 12vmin
+        vertical-align middle
+
+.flowthings__aggregation
+    .bar-chart_bar
+        fill $unknown-color
+
+    .bar-success
+        fill $success-color
+
+    .bar-failure
+        fill $failure-color
