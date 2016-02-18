@@ -96,3 +96,11 @@ Once you've configured and positioned your widgets, you're ready to go.
 
 To run your dashboard, just use `npm start` or `node app.js` and direct your
 browser to the configured host and port.
+
+## Changing Themes
+
+If you change your theme in `config.js`, then you must also run:
+
+```sh
+npm run build-assets
+```
