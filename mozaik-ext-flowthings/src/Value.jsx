@@ -16,8 +16,8 @@ class Value extends Component {
 
   getApiRequest() {
     let params = {
-      flowId: this.props.flowId,
-      accessor: this.props.accessor
+      flow: this.props.flow,
+      accessor: this.props.elem
     }
     return {
       id: `flowthings.value.${ sha1(JSON.stringify(params)) }`,
@@ -27,6 +27,19 @@ class Value extends Component {
 
   onApiData(current) {
     this.setState({ current })
+  }
+
+  display(value) {
+    if (value == null) {
+      return '';
+    }
+
+    if (typeof value === 'number') {
+      let str = value.toString().split('.')
+      return str[0] + '.' + str[1].slice(0, 3)
+    }
+
+    return value.toString()
   }
 
   render() {
@@ -44,7 +57,7 @@ class Value extends Component {
         </div>
         <div className="widget__body">
           <div className="flowthings__value__current number">
-            { this.state.current }
+            { this.display(this.state.current) }
           </div>
         </div>
       </div>

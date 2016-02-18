@@ -19,7 +19,7 @@ class Aggregation extends Component {
 
   getApiRequest() {
     let params = {
-      flowId:  this.props.flowId,
+      flow:    this.props.flow,
       sorts:   this.props.sorts,
       rules:   this.props.rules,
       filter:  this.props.filter,
@@ -48,8 +48,8 @@ class Aggregation extends Component {
   render() {
     let options = {
       mode: 'stacked',
-      yLegend: this.props.field,
-      xLegend: (this.props.groupBy || []).join(', '),
+      yLegend: this.props.yLegend || this.props.field,
+      xLegend: this.props.xLegend || (this.props.groupBy || []).join(', '),
       barClass: d => 'bar-' + d.status
     }
 
