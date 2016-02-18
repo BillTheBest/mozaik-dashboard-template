@@ -36,7 +36,9 @@ class Value extends Component {
 
     if (typeof value === 'number') {
       let str = value.toString().split('.')
-      return str[0] + '.' + str[1].slice(0, 3)
+      return str.length > 1
+        ? str[0] + '.' + str[1].slice(0, 3)
+        : str[0]
     }
 
     return value.toString()
