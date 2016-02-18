@@ -58,7 +58,7 @@ export default function(context) {
     if (initial.hasOwnProperty(key)) {
       return initial[key]
     }
-    return initial[key] = api.drop(id).find({ limit: 1 }).then(drops => {
+    return initial[key] = api.drop(id).find({ filter: 'EXISTS `' + accessor + '`', limit: 1 }).then(drops => {
       if (drops.length === 0) {
         return Promise.resolve(void 0)
       }
