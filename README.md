@@ -5,20 +5,16 @@
 ```sh
 git clone https://github.com/flowthings/mozaik-dashboard-template.git
 cd mozaik-dashboard-template
+cp config.js.base config.js
 npm install .
 ```
 
 ## Getting Started
 
-First, we want to copy over `config.js.base`, as this will serve as our
-configuration template.
-
-```sh
-cp config.js.base config.js
-```
-
-You can find the full details on `config.js` [here](http://mozaik.rocks/docs/config-file.html),
-but for now let's look at how to configure it for flowthings.io.
+Dashboards are configured within `config.js`. You can find the full details on
+`config.js` [here](http://mozaik.rocks/docs/config-file.html). Mozaik supports
+a variety of widgets, but for now let's look at how to configure it for
+flowthings.io.
 
 The first thing to setup is your `account` and `token`:
 
