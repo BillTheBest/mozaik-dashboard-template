@@ -5,9 +5,6 @@
     "type": "git",
     "url": ""
   },
-  "engines": {
-    "node": "0.12.x"
-  },
   "dependencies": {
     "babel": "^5.8.12",
     "babelify": "^6.4.0",
@@ -29,7 +26,7 @@
   "scripts": {
     "test": "npm run build-assets",
     "start": "node app.js",
-    "postinstall": "if $BUILD_ASSETS; then npm run build-assets; fi",
+    "postinstall": "npm run build-assets",
     "build-assets": "gulp build",
     "watch": "gulp watch",
     "gulp": "gulp"
